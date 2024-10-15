@@ -1,0 +1,6 @@
+solidity-test/../log/
+codeql/
+target/
+*.log
+solidity-test/dbs/
+.vscode

@@ -1,0 +1,13 @@
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+package(default_visibility = ["//solidity:__pkg__"])
+
+pkg_files(
+    name = "dbscheme",
+    srcs = ["solidity.dbscheme"],
+)
+
+pkg_files(
+    name = "dbscheme-stats",
+    srcs = ["solidity.dbscheme.stats"],
+)

@@ -1,0 +1,19 @@
+name: codeql/solidity-all
+version: 1.0.4-dev
+groups: solidity
+extractor: solidity
+dbscheme: solidity.dbscheme
+upgrades: upgrades
+library: true
+dependencies:
+  codeql/controlflow: ${workspace}
+  codeql/dataflow: ${workspace}
+  codeql/mad: ${workspace}
+  codeql/regex: ${workspace}
+  codeql/ssa: ${workspace}
+  codeql/tutorial: ${workspace}
+  codeql/util: ${workspace}
+dataExtensions:
+  - codeql/solidity/frameworks/**/model.yml
+  - codeql/solidity/frameworks/**/*.model.yml
+warnOnImplicitThis: true
