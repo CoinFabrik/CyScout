@@ -7,7 +7,7 @@ slug: /
 
 ## Run queries and detect vulnerabilities in your smart contracts using CodeQL-Solidity
 
-![alt text](README/output.gif)
+![alt text](../static/img/output.gif)
 
 This repository contains CoinFabrik's ongoing research and development to extend CodeQL support to the Solidity smart contract language. By leveraging the foundational work done by the CodeQL team for Ruby, we have adapted and expanded their approach to create a powerful toolset for analyzing Solidity code.
 
@@ -35,13 +35,13 @@ Clone this repository from [CodeQl](https://github.com/github/codeql)
 
 ### 2️⃣ Setting up Solidity Extractor
 
-- Go to `codeql-research/solidity/extractor-pack/tools` and give all `.sh` files execute permissions. This is:
+- Go to `cyscout/solidity/codeql/extractor-pack/tools` and give all `.sh` files execute permissions. This is:
 
 ```bash
 chmod +x *.sh
 ```
 
-- Copy the `solidity` and `solidity-test` folders of this repository (`codeql-research`) inside `CodeQL CLI repository` and `CodeQL`. Both at root level.
+- Copy the `solidity` and `solidity-test` folders of this repository (`cyscout`) inside `CodeQL CLI repository` and `CodeQL`. Both at root level.
 
 - Inside `CodeQL` repository, in this path `codeql/solidity` run:
 
@@ -49,9 +49,9 @@ chmod +x *.sh
 bash scripts/create-extractor-pack.sh
 ```
 
-<!-- You should see -->
-<!--
-![output after running create-extractor-pack.sh](/home/cami/codeql-research/static/img/image1.png) --> -->
+You should see
+
+![output after running create-extractor-pack.sh](../static/img/image1.png) -->
 
 ### 3️⃣ Extract Solidity Code
 
@@ -111,10 +111,16 @@ Shutting down query evaluator.
 
 | Num | Detector    | What it Detects                                                      |
 | --- | ----------- | -------------------------------------------------------------------- |
-| 1   | `detector1` | transferFrom uses arbitrary `from`                  |
-| 2   | `detector2` | usage of the word 'FIX' in comments                 |
-| 3   | `detector3` | incorrect order of arguments in bit shift operations |
-| 4   | `detector3` | Dead code: unreachable basic blocks               |
+| 1   | `transferFrom` | transferFrom uses arbitrary `from`                  |
+| 2   | `fixWordInComments` | usage of the word 'FIX' in comments                 |
+| 3   | `incorrectShift` | incorrect order of arguments in bit shift operations |
+| 4   | `deadCode` | Dead code: unreachable basic blocks               |
+| 5   | `msgValueInForLoop` | Detects the use of msg.value inside a loop    |
+| 6   | `badPrng` | Detects bad randomness            |
+| 7   | `divideBeforeMultiply` | Detects loss of precision  |
+| 8   | `incorrectExp` | Detects use of bitwise xor instead of exponential   |
+| 9   | `uncheckedSend` | The return value of a send is not checked    |
+
 
 ### Further Documentation
 
@@ -126,6 +132,6 @@ We welcome contributions to enhance and expand the support for Solidity in CodeQ
 
 ## License
 
-The code in this repository is licensed under the [MIT License](README/LICENSE.md) by CoinFabrik.
+The code in this repository is licensed under the [MIT License](LICENSE.md) by CoinFabrik.
 
 For further information on CodeQL and CodeQL CLI licensing, please refer to the official [repo](https://github.com/github/codeql-cli-binaries).
