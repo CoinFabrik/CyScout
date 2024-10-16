@@ -118,7 +118,7 @@ Shutting down query evaluator.
 | 5   | `divide-before-multiply` | Detects loss of precision  |
 | 6   | `incorrect-exp` | Detects use of bitwise xor instead of exponential   |
 | 7   | `unchecked-send` | The return value of a send is not checked    |
-| 8   | `is-unrecheable` | Detects dead code   |
+| 8   | `is-unreachable` | Detects dead code   |
 | 9   | `unprotected-self-destruct` | Detects unprotected call to selfdestruct/suicidal   |
 
 
