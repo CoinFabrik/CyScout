@@ -111,15 +111,15 @@ Shutting down query evaluator.
 
 | Num | Detector    | What it Detects                                                      |
 | --- | ----------- | -------------------------------------------------------------------- |
-| 1   | `transferFrom` | transferFrom uses arbitrary `from`                  |
-| 2   | `fixWordInComments` | usage of the word 'FIX' in comments                 |
-| 3   | `incorrectShift` | incorrect order of arguments in bit shift operations |
-| 4   | `deadCode` | Dead code: unreachable basic blocks               |
-| 5   | `msgValueInForLoop` | Detects the use of msg.value inside a loop    |
-| 6   | `badPrng` | Detects bad randomness            |
-| 7   | `divideBeforeMultiply` | Detects loss of precision  |
-| 8   | `incorrectExp` | Detects use of bitwise xor instead of exponential   |
-| 9   | `uncheckedSend` | The return value of a send is not checked    |
+| 1   | `transfer-from` | transferFrom uses arbitrary `from`                  |
+| 2   | `incorrect-shift` | incorrect order of arguments in bit shift operations |
+| 3   | `msg-valu-in-for-loop` | Detects the use of msg.value inside a loop    |
+| 4   | `bad-prng` | Detects bad randomness            |
+| 5   | `divide-before-multiply` | Detects loss of precision  |
+| 6   | `incorrect-exp` | Detects use of bitwise xor instead of exponential   |
+| 7   | `unchecked-send` | The return value of a send is not checked    |
+| 8   | `is-unrecheable` | Detects dead code   |
+| 9   | `unprotected-self-destruct` | Detects unprotected call to selfdestruct/suicidal   |
 
 
 ### Further Documentation

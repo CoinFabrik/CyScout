@@ -4,9 +4,12 @@ title: Detectors
 
 # Detectors Index 
 
-
-- deadCode
-- fixWordInComments
-- incorrectShift
-- msgValueInForLoop
-- transferFrom
+- incorrect-shift
+- divide-before-multiply
+- transfer-from
+- incorrect-exp
+- msg-value-in-for-loop
+- unprotected-self-destruct
+- unchecked-send
+- is-unrecheable
+- bad-prng
