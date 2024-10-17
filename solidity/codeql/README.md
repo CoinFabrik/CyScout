@@ -7,7 +7,7 @@ slug: /
 
 ## Run queries and detect vulnerabilities in your smart contracts using CodeQL-Solidity
 
-![alt text](../static/img/output.gif)
+![alt text](docs/static/img/output.gif))
 
 This repository contains CoinFabrik's ongoing research and development to extend CodeQL support to the Solidity smart contract language. By leveraging the foundational work done by the CodeQL team for Ruby, we have adapted and expanded their approach to create a powerful toolset for analyzing Solidity code.
 
@@ -82,7 +82,7 @@ For more detailed instructions on using CodeQL, refer to the [official CodeQL do
 
 We welcome contributions to enhance and expand the support for Solidity in CodeQL. Feel free to submit issues, feature requests, or pull requests.
 
-For more information, please refer to the [Contribution Guidelines](../docs/Contributing.md).
+For more information, please refer to the [Contribution Guidelines](/docs/Contributing.md).
 
 ## License
 

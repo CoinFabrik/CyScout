@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "CyScout",
   tagline: "Coinfabrik reasearch on CodeQL",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.png",
 
   url: "https://coinfabrik.github.io",
 
