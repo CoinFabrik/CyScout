@@ -5,3 +5,4 @@ ql/test/**/*.testproj
 ql/test/**/*.actual
 ql/test/**/CONSISTENCY
 .codeql
+solidity-test/dbs/

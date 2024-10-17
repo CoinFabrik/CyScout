@@ -607,7 +607,7 @@ solidity_new_expression_def(
   int name: @solidity_type_name ref
 );
 
-@solidity_number_literal_child_type = @solidity_token_decimal_number | @solidity_token_number_unit
+@solidity_number_literal_child_type = @solidity_token_decimal_number | @solidity_token_hex_number | @solidity_token_number_unit
 
 #keyset[solidity_number_literal, index]
 solidity_number_literal_child(
@@ -1211,28 +1211,29 @@ case @solidity_token.kind of
 | 5 = @solidity_token_decimal_number
 | 6 = @solidity_token_enum_value
 | 7 = @solidity_token_false
-| 8 = @solidity_token_hex_string_literal
-| 9 = @solidity_token_identifier
-| 10 = @solidity_token_immutable
-| 11 = @solidity_token_number_unit
-| 12 = @solidity_token_pragma_value
-| 13 = @solidity_token_primitive_type
-| 14 = @solidity_token_solidity_version
-| 15 = @solidity_token_solidity_version_comparison_operator
-| 16 = @solidity_token_state_mutability
-| 17 = @solidity_token_string
-| 18 = @solidity_token_true
-| 19 = @solidity_token_unchecked
-| 20 = @solidity_token_unicode_string_literal
-| 21 = @solidity_token_virtual
-| 22 = @solidity_token_visibility
-| 23 = @solidity_token_yul_boolean
-| 24 = @solidity_token_yul_break
-| 25 = @solidity_token_yul_continue
-| 26 = @solidity_token_yul_decimal_number
-| 27 = @solidity_token_yul_evm_builtin
-| 28 = @solidity_token_yul_hex_number
-| 29 = @solidity_token_yul_leave
+| 8 = @solidity_token_hex_number
+| 9 = @solidity_token_hex_string_literal
+| 10 = @solidity_token_identifier
+| 11 = @solidity_token_immutable
+| 12 = @solidity_token_number_unit
+| 13 = @solidity_token_pragma_value
+| 14 = @solidity_token_primitive_type
+| 15 = @solidity_token_solidity_version
+| 16 = @solidity_token_solidity_version_comparison_operator
+| 17 = @solidity_token_state_mutability
+| 18 = @solidity_token_string
+| 19 = @solidity_token_true
+| 20 = @solidity_token_unchecked
+| 21 = @solidity_token_unicode_string_literal
+| 22 = @solidity_token_virtual
+| 23 = @solidity_token_visibility
+| 24 = @solidity_token_yul_boolean
+| 25 = @solidity_token_yul_break
+| 26 = @solidity_token_yul_continue
+| 27 = @solidity_token_yul_decimal_number
+| 28 = @solidity_token_yul_evm_builtin
+| 29 = @solidity_token_yul_hex_number
+| 30 = @solidity_token_yul_leave
 ;
 
 

@@ -390,6 +390,12 @@ module Solidity {
     }
   }
 
+  /** A class representing `decimal_number` tokens. */
+  class DecimalNumber extends @solidity_token_decimal_number, Token {
+    /** Gets the name of the primary QL class for this element. */
+    final override string getAPrimaryQlClass() { result = "DecimalNumber" }
+  }
+
   /** A class representing `do_while_statement` nodes. */
   class DoWhileStatement extends @solidity_do_while_statement, AstNode {
     /** Gets the name of the primary QL class for this element. */
@@ -645,6 +651,12 @@ module Solidity {
     }
   }
 
+  /** A class representing `hex_number` tokens. */
+  class HexNumber extends @solidity_token_hex_number, Token {
+    /** Gets the name of the primary QL class for this element. */
+    final override string getAPrimaryQlClass() { result = "HexNumber" }
+  }
+
   /** A class representing `hex_string_literal` tokens. */
   class HexStringLiteral extends @solidity_token_hex_string_literal, Token {
     /** Gets the name of the primary QL class for this element. */
@@ -871,11 +883,11 @@ module Solidity {
     /** Gets the name of the primary QL class for this element. */
     final override string getAPrimaryQlClass() { result = "NumberLiteral" }
 
-    /** Gets the child of this node. */
-    final NumberUnit getChild() { solidity_number_literal_child(this, result) }
+    /** Gets the `i`th child of this node. */
+    final AstNode getChild(int i) { solidity_number_literal_child(this, i, result) }
 
     /** Gets a field or child node of this node. */
-    final override AstNode getAFieldOrChild() { solidity_number_literal_child(this, result) }
+    final override AstNode getAFieldOrChild() { solidity_number_literal_child(this, _, result) }
   }
 
   /** A class representing `number_unit` tokens. */
