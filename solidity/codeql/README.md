@@ -123,6 +123,14 @@ Shutting down query evaluator.
 
 ### Further Documentation
 
+## Work In Progress
+
+We are actively working on enhancing the capabilities of our Solidity CodeQL implementation. Our current focus and status is on:
+
+- AST: usable
+- CFG: experimental
+- DFA: soon
+
 For more detailed instructions on using CodeQL, refer to the [official CodeQL documentation](https://codeql.github.com/docs/).
 
 ## 🤝 Contributing
