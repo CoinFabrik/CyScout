@@ -1,9 +1,13 @@
+---
+slug: /
+---
+
 
 # CyScout
 
 ## Run queries and detect vulnerabilities in your smart contracts using CodeQL-Solidity
 
-![alt text](docs/static/img/output.gif)
+![alt text](docs/static/img/output.gif))
 
 This repository contains CoinFabrik's ongoing research and development to extend CodeQL support to the Solidity smart contract language. By leveraging the foundational work done by the CodeQL team for Ruby, we have adapted and expanded their approach to create a powerful toolset for analyzing Solidity code.
 
@@ -11,44 +15,42 @@ This repository contains CoinFabrik's ongoing research and development to extend
 
 Our goal is to provide a comprehensive set of tools for querying and detecting vulnerabilities in Solidity smart contracts. We build upon the work of [Joran Honig's Solidity Tree-sitter grammar](https://github.com/JoranHonig/tree-sitter-solidity) and the CodeQL team's [Ruby implementation](https://github.blog/security/web-application-security/code-scanning-and-ruby-turning-source-code-into-a-queryable-database/). The project includes an extractor, database schema generation, and abstractions such as a cleaner Abstract Syntax Tree (AST), Control Flow Graph (CFG), and Dataflow analysis. These elements enable complex vulnerability detection and querying, similar to the C++ libraries in CodeQL.
 
-
 ## 🚀 Project Status
 
 - **Extractor and Database Schema**: Usable and functional for Solidity codebases.
 - **Current Work**: We are actively developing a cleaner AST, CFG, and Dataflow support to enhance the detection of vulnerabilities.
-- **Proof of Concept (PoC)**: Three simple detector examples are provided to demonstrate basic usage and potential.
+- **Proof of Concept (PoC)**: Nine simple detector examples are provided to demonstrate basic usage and potential.
 
 ## 🏁 Getting Started
 
 To get started with analyzing Solidity smart contracts using CodeQL, follow these steps:
 
-### 1️⃣ Install CodeQL CLI 
+### 1️⃣ Install CodeQL CLI
 
 First, download and install the CodeQL CLI by following the instructions provided in the [official CodeQL CLI repository](https://github.com/github/codeql-cli-binaries).
 
+> Remember to add the CodeQL CLI to your PATH.
 
-[!TIP] 
 
 ### 2️⃣ Setting up Solidity Extractor
-- Go to `cyscout/solidity/extractor-pack/tools` and give all `.sh` files execute permissions. This is:
 
-```bash 
+- Go to `CyScout/solidity/codeql/extractor-pack/tools` and give all `.sh` files execute permissions. This is:
+
+```bash
 chmod +x *.sh
 ```
 
-- Copy the `solidity` and `solidity-test` folders of this repository (`CyScout`) inside `CodeQL CLI repository` and `CodeQL`. Both at root level.
+- Copy the `CyScout/solidity/codeql/ql/lib/solidity` and `CyScout/solidity/codeql/solidity-test` folders of this repository (`cyscout`) inside `CodeQL CLI repository` and `CodeQL`. Both at root level.
 
-
-- Inside `CodeQL` repository, in this path `codeql/solidity` run: 
+- Inside `CodeQL` repository, in this path `codeql/solidity` run:
 
 ```shell
-bash scripts/create-extractor-pack.sh 
+bash scripts/create-extractor-pack.sh
 ```
 
 You should see
 
-![output after running create-extractor-pack.sh](images/image1.png)
-
+![output after running create-extractor-pack.sh](docs/static/img/image1.png)
 
 ### 3️⃣ Extract Solidity Code
 
@@ -59,7 +61,6 @@ codeql database create /path-to-database/ -l solidity -s /path-to-solidity-codeb
 ```
 
 If all went smoothly, you should see something of the kind:
-
 
 ```shell
 
@@ -86,7 +87,6 @@ Successfully created database at /home/user/codeql/solidity-test/test-db-bitshif
 
 ```
 
-
 ### 4️⃣ Run Sample Detectors
 
 Once the database is created, you can run sample detectors written in the QL language:
@@ -94,6 +94,7 @@ Once the database is created, you can run sample detectors written in the QL lan
 ```bash
 codeql query run /path-to-detector/ -d /path-to-created-database/
 ```
+
 For instance:
 
 ```shell
@@ -107,12 +108,17 @@ Shutting down query evaluator.
 
 ## Detectors
 
-Num | Detector | What it Detects
---- | --- | ---
-1 | `detector1` | [transferFrom uses arbitrary `from`](det01_doc.md)
-2 | `detector2` | [usage of the word 'FIX' in comments](det02_doc.md)
-3 | `detector3` | [incorrect order of arguments in bit shift operations](det03_doc.md)
-4 | `detector3` | [Dead code: unreachable basic blocks](det03_doc.md)
+| Num | Detector    | What it Detects                                                      |
+| --- | ----------- | -------------------------------------------------------------------- |
+| 1   | `transfer-from` | transferFrom uses arbitrary `from`                  |
+| 2   | `incorrect-shift` | incorrect order of arguments in bit shift operations |
+| 3   | `msg-valu-in-for-loop` | Detects the use of msg.value inside a loop    |
+| 4   | `bad-prng` | Detects bad randomness            |
+| 5   | `divide-before-multiply` | Detects loss of precision  |
+| 6   | `incorrect-exp` | Detects use of bitwise xor instead of exponential   |
+| 7   | `unchecked-send` | The return value of a send is not checked    |
+| 8   | `is-unreachable` | Detects dead code   |
+| 9   | `unprotected-self-destruct` | Detects unprotected call to selfdestruct/suicidal   |
 
 
 ### Further Documentation
@@ -123,11 +129,10 @@ For more detailed instructions on using CodeQL, refer to the [official CodeQL do
 
 We welcome contributions to enhance and expand the support for Solidity in CodeQL. Feel free to submit issues, feature requests, or pull requests.
 
-For more information, please refer to the [Contribution Guidelines](../codeql/docs/docs/Contributing.md).
-
+For more information, please refer to the [Contribution Guidelines](/docs/Contributing.md).
 
 ## License
 
-The code in this repository is licensed under the [MIT License](LICENSE) by CoinFabrik.
+The code in this repository is licensed under the [MIT License](LICENSE.md) by CoinFabrik.
 
 For further information on CodeQL and CodeQL CLI licensing, please refer to the official [repo](https://github.com/github/codeql-cli-binaries).

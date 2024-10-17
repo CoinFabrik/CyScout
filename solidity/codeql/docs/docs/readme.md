@@ -19,7 +19,7 @@ Our goal is to provide a comprehensive set of tools for querying and detecting v
 
 - **Extractor and Database Schema**: Usable and functional for Solidity codebases.
 - **Current Work**: We are actively developing a cleaner AST, CFG, and Dataflow support to enhance the detection of vulnerabilities.
-- **Proof of Concept (PoC)**: Three simple detector examples are provided to demonstrate basic usage and potential.
+- **Proof of Concept (PoC)**: Nine simple detector examples are provided to demonstrate basic usage and potential.
 
 ## 🏁 Getting Started
 
@@ -29,9 +29,8 @@ To get started with analyzing Solidity smart contracts using CodeQL, follow thes
 
 First, download and install the CodeQL CLI by following the instructions provided in the [official CodeQL CLI repository](https://github.com/github/codeql-cli-binaries).
 
-### Clone CodeQL repository
+> Remember to add the CodeQL CLI to your PATH.
 
-Clone this repository from [CodeQl](https://github.com/github/codeql)
 
 ### 2️⃣ Setting up Solidity Extractor
 
@@ -41,7 +40,7 @@ Clone this repository from [CodeQl](https://github.com/github/codeql)
 chmod +x *.sh
 ```
 
-- Copy the `solidity` and `solidity-test` folders of this repository (`cyscout`) inside `CodeQL CLI repository` and `CodeQL`. Both at root level.
+- Copy the `CyScout/solidity/codeql/ql/lib/solidity` and `CyScout/solidity/codeql/solidity-test` folders of this repository (`cyscout`) inside `CodeQL CLI repository` and `CodeQL`. Both at root level.
 
 - Inside `CodeQL` repository, in this path `codeql/solidity` run:
 
@@ -51,7 +50,7 @@ bash scripts/create-extractor-pack.sh
 
 You should see
 
-![output after running create-extractor-pack.sh](../static/img/image1.png) -->
+![output after running create-extractor-pack.sh](../static/img/image1.png)
 
 ### 3️⃣ Extract Solidity Code
 
@@ -129,6 +128,8 @@ For more detailed instructions on using CodeQL, refer to the [official CodeQL do
 ## 🤝 Contributing
 
 We welcome contributions to enhance and expand the support for Solidity in CodeQL. Feel free to submit issues, feature requests, or pull requests.
+
+For more information, please refer to the [Contribution Guidelines](../codeql/docs/docs/Contributing.md).
 
 ## License
 
