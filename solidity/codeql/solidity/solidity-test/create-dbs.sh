@@ -2,7 +2,7 @@
 
 create_db() {
     echo -e "\e[1;32mCreating database for $1\e[0m"
-    codeql database create --overwrite --search-path ../codeql/solidity/extractor-pack/ -l solidity ./dbs/db-$1 -s ./$1/ > /dev/null 
+    codeql database create --overwrite --search-path ../extractor-pack/ -l solidity ./dbs/db-$1 -s ./$1/ > /dev/null 
 }
 
 
