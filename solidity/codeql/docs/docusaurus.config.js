@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "CyScout",
   tagline: "Coinfabrik reasearch on CodeQL",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.png",
 
   url: "https://coinfabrik.github.io",
 
@@ -58,12 +58,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/CyScout-Social-Card.jpg",
       navbar: {
         title: "CyScout",
         logo: {
           alt: "My Site Logo",
-          src: "img/logo.svg",
+          src: "img/logo-light.svg",
         },
         /* items: [
           {
