@@ -801,7 +801,7 @@ dependencies = [
 [[package]]
 name = "tree-sitter-solidity"
 version = "1.2.6"
-source = "git+https://github.com/arlosiggio/tree-sitter-solidity.git?rev=21ede9e57f6f8f0979bfae52c2adfdfe54112cb7#21ede9e57f6f8f0979bfae52c2adfdfe54112cb7"
+source = "git+https://github.com/arlosiggio/tree-sitter-solidity.git#36a28d36ab4a827566586dad85a0ba444af44ed7"
 dependencies = [
  "cc",
  "tree-sitter",
