@@ -25,69 +25,14 @@ Our goal is to provide a comprehensive set of tools for querying and detecting v
 
 To get started with analyzing Solidity smart contracts using CodeQL, follow these steps:
 
-### 1️⃣ Install CodeQL CLI
+### Setting Up CodeQL Solidity
 
-First, download and install the CodeQL CLI by following the instructions provided in the [official CodeQL CLI repository](https://github.com/github/codeql-cli-binaries).
+Work in progress
 
-> Remember to add the CodeQL CLI to your PATH.
+### Install CodeQL Solidity Extension
 
 
-### 2️⃣ Setting up Solidity Extractor
-
-- Go to `CyScout/solidity/codeql/extractor-pack/tools` and give all `.sh` files execute permissions. This is:
-
-```bash
-chmod +x *.sh
-```
-
-- Copy the `CyScout/solidity/codeql/ql/lib/solidity` and `CyScout/solidity/codeql/solidity-test` folders of this repository (`cyscout`) inside `CodeQL CLI repository` and `CodeQL`. Both at root level.
-
-- Inside `CodeQL` repository, in this path `codeql/solidity` run:
-
-```shell
-bash scripts/create-extractor-pack.sh
-```
-
-You should see
-
-![output after running create-extractor-pack.sh](docs/static/img/image1.png)
-
-### 3️⃣ Extract Solidity Code
-
-To create a CodeQL database from a Solidity codebase, run the following command:
-
-```shell
-codeql database create /path-to-database/ -l solidity -s /path-to-solidity-codebase/ --search-path /path-to-[solidity/extractor-pack]/
-```
-
-If all went smoothly, you should see something of the kind:
-
-```shell
-
-codeql database create /home/user/codeql/solidity-test/test-db-bitshift-examples -l solidity -s /home/user/codeql/solidity-test/bitshift-order-test --search-path ../solidity/extractor-pack --overwrite
-Initializing database at /home/user/codeql/solidity-test/test-db-bitshift-examples.
-Running build command: []
-Running command in /home/user/codeql/solidity-test/bitshift-order-test: [/home/user/codeql/solidity/extractor-pack/tools/autobuild.sh]
-[2024-09-03 12:55:56] [build-stderr] Scanning for files in /home/user/codeql/solidity-test/bitshift-order-test...
-[2024-09-03 12:55:56] [build-stderr] /home/user/codeql/solidity-test/test-db-bitshift-examples: Indexing files in in /home/user/codeql/solidity-test/bitshift-order-test...
-[2024-09-03 12:55:56] [build-stderr] Running command in /home/user/codeql/solidity-test/bitshift-order-test: [/home/user/codeql/solidity/extractor-pack/tools/index-files.sh, /home/user/codeql/solidity-test/test-db-bitshift-examples/working/files-to-index13975833793457248559.list]
-[2024-09-03 12:55:56] [build-stdout] [2024-09-03 12:55:56] [build-stdout]  INFO Extraction started
-[2024-09-03 12:55:56] [build-stdout] [2024-09-03 12:55:56] [build-stdout]  INFO Using 7 threads
-[2024-09-03 12:55:56] [build-stdout] [2024-09-03 12:55:56] [build-stdout]  INFO extracting: /home/user/codeql/solidity-test/bitshift-order-test/remediated.sol
-[2024-09-03 12:55:56] [build-stdout] [2024-09-03 12:55:56] [build-stdout]  INFO extracting: /home/user/codeql/solidity-test/bitshift-order-test/vulnerable.sol
-[2024-09-03 12:55:56] [build-stdout] [2024-09-03 12:55:56] [build-stdout]  INFO Extraction complete
-Finalizing database at /home/user/codeql/solidity-test/test-db-bitshift-examples.
-Running TRAP import for CodeQL database at /home/user/codeql/solidity-test/test-db-bitshift-examples...
-Importing TRAP files
-Merging relations
-Finished writing database (relations: 4.86 KiB; string pool: 2.05 MiB).
-TRAP import complete (983ms).
-Finished zipping source archive (643.00 B).
-Successfully created database at /home/user/codeql/solidity-test/test-db-bitshift-examples.
-
-```
-
-### 4️⃣ Run Sample Detectors
+### Run Sample Detectors
 
 Once the database is created, you can run sample detectors written in the QL language:
 
