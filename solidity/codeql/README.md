@@ -31,6 +31,7 @@ Work in progress
 
 ### Install CodeQL Solidity Extension
 
+Download and install Github's official [VSCode extension for CodeQL](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql).
 
 ### Run Sample Detectors
 
